@@ -2,6 +2,7 @@ using Blazor.Learner.Server.Data;
 using Blazor.Learner.Server.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+//CreateDbIfNotExists(app);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
